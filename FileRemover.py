@@ -19,8 +19,10 @@ year=date_now[0:2]
 
 print (day, month, year)
 
+folderPath = "home/testFolder"
+
 ## Set path to that of the desired dropbox folder
-for path, subdirs, files in os.walk('/home/testFolder/'):
+for path, subdirs, files in os.walk(folderPath):
    for filename in files:
         a = filename
 	## Removes .mp4, .MP4, .jpg, JPG file types
@@ -33,13 +35,13 @@ for path, subdirs, files in os.walk('/home/testFolder/'):
                  print date_file
                  date_file=date_file[1]
                  if int(date_file[0:2]) < int(year):
-                    os.remove("/home/testFolder/"+filename)
+                    os.remove(folderPath+filename)
                  else:
                      if int(date_file[2:4]) < int(month):
-                         os.remove("/home/testFolder/"+filename)
+                         os.remove(folderPath+filename)
                      else:
                          if int(date_file[4:]) < int(day):
-                             os.remove("/home/testFolder/"+filename)
+                             os.remove(folderPath+filename)
 
 
 sys.exit (0)
