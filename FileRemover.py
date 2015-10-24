@@ -19,7 +19,7 @@ year=date_now[0:2]
 
 print (day, month, year)
 
-folderPath = "home/testFolder"
+folderPath = "/home/testFolder"
 
 ## Set path to that of the desired dropbox folder
 for path, subdirs, files in os.walk(folderPath):
